@@ -1,0 +1,217 @@
+  .header {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #181f29;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header1 {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      background-color: #182332;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header__logo {
+      width: 100px;
+      object-fit: contain;
+      margin: 0 20px;
+      margin-top: 18px;
+    }
+    
+    .header__search {
+      display: flex;
+      flex: 3;
+      align-items: center;
+      border-radius: 29px;
+    }
+    .rounded-textbox {
+      /* border: 1px solid #ccc;*/
+      /* border-radius: 5px;  */
+      padding: 5px 9px;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+    }
+    .list{
+      position: relative;
+      top: 100px;
+      background-color: rgba(255, 255, 255, 0.758);
+    }
+    
+    /* Optional: Add hover and focus styles */
+    .rounded-textbox:hover,
+    .rounded-textbox:focus {
+      border-color: #888;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    } 
+    .header__searchInput {
+      height: 35px;
+      padding: 10px;
+      border: none;
+      width: 100%;
+    } 
+    
+    
+    .header__searchIcon {
+      padding: 1px;
+      height: 36.8px !important;
+      border: none;
+      height: 35px;
+      cursor: pointer;
+      text-indent: -1000px;
+      /* color: #fff; */
+      background-color: #cd9042; 
+      position: relative;
+      outline: 0;
+      
+      line-height: 1px;
+      /* display: block;
+      height: 100px;
+      width: 100%;
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      outline: 0;
+      color: #ffffff;
+      background: #cd9042; 
+      border: none;
+      text-indent: -1000px;
+      line-height: 1px; */
+    }
+    
+    .header__optionLineOne {
+      font-size: 10px;
+      color: white;
+    }
+    .header__optionLineOne1 {
+      font-size: 13px;
+      color: white;
+      font-weight: 800;
+      align-items: center;
+    }
+    
+    .header__optionLineTwo {
+      font-size: 13px;
+      color: white;
+      font-weight: 800;
+    }
+    .basket{
+      color: rgb(255, 255, 255);
+    }
+    .header__optionBasket {
+      display: flex;
+      align-items: center;
+      color: rgb(255, 255, 255);
+    }
+    
+    .header__basketCount {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    
+    .header__nav {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .button{
+      box-sizing: content-box;
+      box-shadow: none;
+      font-family: inherit;
+      cursor: pointer;
+      
+    }
+    
+    .header__option {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: white;
+    }
+    .header__option1{
+      flex-direction: column;
+      margin-left: -10px;
+      margin-right: 10px;
+      color: white;
+    }
+    .nav {
+      height: 40px;
+      background-color: #232f3d;
+      margin: 0;
+  }
+  
+  .container-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 15px;
+  } 
+  
+  .container-nav ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 1rem;
+      color: white;
+      margin-left: -160px;
+      /* margin-right: 10px; */
+      list-style: none;
+  }
+  
+  .container-nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0px 8px;  
+      /* margin: 0 20px; */
+      margin-top: 18px;  
+  }
+  
+  .nav-right-image-amazon-prime {
+      min-width: 300px;
+      height: 300;
+      max-width: 500px;
+  }
+  
+  .nav-right-image-amazon-prime img {
+      width: 100%;
+      height: 100%;
+  }
+  .prime-image {
+    background-color: white;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    color: #000;
+    margin-left: -10px;
+    transition: display 1s;
+    padding: 10px;
+}
+
+.prime-image-hover:hover .prime-image {
+    transition: display 1s;
+    display: block;
+}
+
+.prime-image img {
+    width: 100%;
+    height: 100%;
+}
+.lauguge-image {
+  width: 20px;
+}
+
+.lauguge-image img {
+  margin-top: -1%;
+  width: 90%;
+}

@@ -1,0 +1,81 @@
+.image-dis img{
+  display: flex;
+  max-height: 500px;
+  object-fit: contain;
+  margin-bottom: 45px;
+  
+}
+
+.image-display img{
+  display: flex;
+  max-height: 500px;
+  object-fit: contain;
+  margin-bottom: 45px;
+}
+.background{
+  background-color: white;
+}
+.compare table {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  font-size: 18px;
+  table-layout: fixed;
+}
+
+.compare table .bg-red {
+  background-color: red;
+}
+
+.compare table .bg-green {
+  background-color: green;
+}
+
+.compare table .bg-blue {
+  background-color: blue;
+}
+
+.compare table tr > td,
+.compare table tr > th {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.compare table th[scope="row"] {
+  font-size: 20px;
+  color: #393c45;
+  font-weight: normal;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  text-align: left;
+  padding-left: 45px;
+}
+
+.compare table tr.condition {
+  color: #fff;
+  font-size: 20px;
+}
+
+.compare table tr.hightligth span {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+.compare table thead th {
+  font-size: 20px;
+  color: #393c45;
+  font-weight: normal;
+}
+
+.compare .thead-default th {
+  background-color: #fff;
+}
+.title__{
+  color: rgb(37, 37, 37);
+}
