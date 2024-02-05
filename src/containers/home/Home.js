@@ -13,6 +13,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import AllProducts from "../category/allProducts/AllProducts";
 import axios from "axios";
 import { RecentActors } from "@mui/icons-material";
+import CarouselBlock from "./CarouselBlock/CarouselBlock";
 
 function Home() {
   const [Product, setProduct] = useState([]);
@@ -23,31 +24,39 @@ function Home() {
   }, []);
 
   function getRecentProduct() {
-    var get = [localStorage.getItem("recentOpen")];
+    var get = localStorage.getItem("recentOpen");
     if (get) {
-      var convert = JSON.parse(get);
-      convert.reverse();
-      Promise.all(
-        convert.map((product) =>
-          axios
-            .get(
-              "https://localhost:7199/api/Product/GetProduct?productId=" +
-                product
-            )
-            .then((response) => response.data)
-            .catch((error) => {
-              console.error("Error fetching product:", error);
-              return null;
-            })
-        )
-      ).then((data) => {
-        setProduct(data);
-        setProLoading(false);
-      });
+      var convert = JSON.parse(get).reverse();
+      if (Array.isArray(convert) && convert.length > 0) {
+        Promise.all(
+          convert.map((product) =>
+            axios
+              .get(
+                "https://localhost:7199/api/Product/GetProduct?productId=" + product
+              )
+              .then((response) => response.data)
+              .catch((error) => {
+                console.error("Error fetching product:", error);
+                return null;
+              })
+          )
+        ).then((data) => {
+          if (data && data.length > 0) {
+            setProduct(data);
+          } else {
+            console.error("Empty or invalid response data");
+          }
+          setProLoading(false);
+        });
+      } else {
+        console.error("Invalid or empty recentOpen data");
+      }
     } else {
       console.log("no data");
     }
   }
+  
+  
 
   const navigate = useNavigate();
   const settings = {
@@ -75,7 +84,8 @@ function Home() {
       <Header />
       <div className="home">
         <div className="home__container">
-          <Slider {...settings}>
+          <CarouselBlock/>
+          {/* <Slider {...settings}>
             <Link to={ROUTES.allProducts.name}>
               <img
                 src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Beauty/GW/Jan/unrecatf/icici/PC-2_less._CB583013789_.jpg"
@@ -121,16 +131,16 @@ function Home() {
                 width="1488"
               />
             </Link>
-          </Slider>
+          </Slider> */}
           <div className="main">
             <div className="home__row">
               <ProductUser />
             </div>
 
-            <h3 className="m-4">Recent View</h3>
+            <h3 className="m-4">Your browsing history</h3>
             <div className="Products-related1">
               <Slider {...settings1}>
-                {!Product ? (
+                {!Product && Product.length > 0 ?(
                   <h4>No Recent View</h4>
                 ) : (
                 Product.map((p) => (

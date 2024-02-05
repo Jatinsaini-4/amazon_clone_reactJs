@@ -15,6 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "../../../features/counter/counterSlice";
+import api from "../../Api";
 
 function useQuery() {
   const { search } = useLocation();
@@ -62,7 +63,7 @@ function ProductDetail() {
   const dispatch = useDispatch();
 
   function addcart() {
-    axios
+    api
       .post("https://localhost:7199/api/ShoppingCart", data)
       .then((res) => {
         dispatch(increment());

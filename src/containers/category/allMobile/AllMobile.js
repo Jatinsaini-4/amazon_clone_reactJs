@@ -16,6 +16,8 @@ import Footer from "../../home/footer/Footer";
 import { Link } from "react-router-dom";
 import ROUTES from "../../../navigation/Router";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function AllMobile() {
   const [loading, setLoading] = useState(false);
@@ -23,6 +25,7 @@ function AllMobile() {
   useEffect(() => {
     getAll();
   }, []);
+
 
   function getAll() {
     setLoading(true);
@@ -34,8 +37,22 @@ function AllMobile() {
 
   return (
     <div>
+      
       <Header />
       <div className="container123">
+      <Carousel>
+  <div>
+    <img src="https://m.media-amazon.com/images/G/31/img22/WLA/2024/Launches24/OnePlus/Buds3/Teaser3/1400x800_new._CB583971473_.jpg"
+ alt="Product 1" />
+  </div>
+  <div>
+    <img src="https://m.media-amazon.com/images/G/31/JanartiQOO/janartIQOO/brandstore/BAUnew/iQOOneo9pro/D112032990_WLD---BAU---iQOO-Neo-9-pro---Design-SIM_Homepage_1400x800_3._CB583960715_.jpg" alt="Product 2" />
+  </div>
+  <div>
+    <img src="https://m.media-amazon.com/images/G/31/img23/Wireless/Isha/Honor/HonorX9B/GW/Feb/3rd/D114340500_1400x800._CB583389264_.jpg" alt="Product 2" />
+  </div>
+</Carousel>
+
         <div className="row">
           {loading ? (
             <p className="loading">

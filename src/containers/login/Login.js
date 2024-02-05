@@ -122,7 +122,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [form, setForm] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -145,11 +145,11 @@ function Login() {
         "https://localhost:7199/api/Authenticate/login",
         form
       );
-      const { token, refreshToken, role, userName,id } = response.data;
+      const { token, refreshToken, role, name,id } = response.data;
       localStorage.setItem("token", token);
       localStorage.setItem("refreshToken", refreshToken);
       localStorage.setItem("role", role);
-      localStorage.setItem("userName", userName);
+      localStorage.setItem("Name", name);
       localStorage.setItem("applicationUserId", id);
       toast.success("Login Successfully done !");
       navigate(ROUTES.home.name);
@@ -174,11 +174,11 @@ function Login() {
               <h1>Sign-In</h1>
 
               <div className="form_data">
-                <label htmlFor="email">Username</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
-                  name="username"
-                  value={form.username}
+                  name="email"
+                  value={form.email}
                   onChange={handleChange}
                   id="email"
                 />

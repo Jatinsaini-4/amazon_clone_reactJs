@@ -27,8 +27,21 @@ function AllHomeKitchen() {
   }
 
   return (
-    <div>
+    <div className="bg__">
       <Header />
+      <div >
+        <h2 className="title___">
+        <b> Buy Lighting Solutions Online at Amazon India</b>
+        </h2>
+      <p className="txt_">Explore the wide range of lighting solutions for your home at Amazon India. Shop from a wide range of lighting solutions from top brands like Wipro, SYSKA, PHILIPS, Halonix, Desidiya and many more at Amazon.in.
+</p>
+      </div>
+      <div className="container">
+      <div className="bxc-grid__image">
+        <img onload="window.uet && uet.call && uet(&quot;af&quot;);" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Lightingstore/Lighting_Header_Mob_3000x700.gif"/>
+        <img onload="window.uet && uet.call && uet(&quot;af&quot;);" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Lightingstore/Comp_1.gif"/>
+      </div>
+      </div>
       <div className="containerhome">
         <div className="row">
           {loading ? (

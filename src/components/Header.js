@@ -96,12 +96,12 @@ import { FaWeight } from "react-icons/fa";
 
 function Header() {
   const navigate = useNavigate();
-  const [user, setUser] = useState({ role: null, userName: null });
+  const [user, setUser] = useState({ role: null, name: null });
   const count = useSelector((state) => state.counter.value)
   useEffect(() => {
     let role = localStorage.getItem("role");
-    let userName = localStorage.getItem("userName");
-    setUser({ userName: userName, role: role });
+    let name = localStorage.getItem("Name");
+    setUser({ name: name, role: role });
     console.log(results);
   }, []);
 
@@ -123,7 +123,7 @@ function Header() {
         <div className="header__nav">
           {user?.role ? (
             <div className="header__option">
-              <span className="header__optionLineOne" style={{fontWeight:"bold"}}>Hello,{user.userName}</span>
+              <span className="header__optionLineOne" >Hello, {user.name}</span>
               <Link
                 className="header__optionLineTwo"
                 onClick={() => {
@@ -180,35 +180,21 @@ function Header() {
       <nav class="nav">
         <div class="container container-nav">
           <ul className="ul">
-            
-            {/* <li class="border-white" id="open-nav-sidebar">
-                    <span class="open-nav-slider">
-                        <i class="fa-solid fa-bars"></i>
-                        All
-                    </span>
-                </li> */}
             <li class="border-white">
-              {/* <Link to={navigate(ROUTES.login.name)}>All</Link> */}
-              {/* <a href="#">All</a> */}
               <Link to={ROUTES.allProducts.name}>All</Link>
             </li>
             <li class="border-white">
               <Link to={ROUTES.allMobile.name}>Mobile</Link>
-              {/* <a href="#">Mobiles</a> */}
             </li>
             <li class="border-white">
               <Link to={ROUTES.allElectronic.name}>Electronic</Link>
-              {/* <a href="#">Electronic</a> */}
             </li>
             <li class="border-white">
               <Link to={ROUTES.allHomeKitchen.name}>Home & Kitchen</Link>
-              {/* <a href="#">Home & Kitchen</a> */}
+             
             </li>
           </ul>
-          {/* <div class="nav-right-image-amazon-prime">
-                <img
-                    src="https://m.media-amazon.com/images/G/31/img17/Home/AmazonTV/Ravina/Desktop/Watch-Entertainment-for-FREE_400-x39._CB605460886_.jpg" />
-            </div> */}
+
         </div>
       </nav>
       <div>

@@ -134,10 +134,16 @@ function SignUp() {
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    username: "",
+    name:"",
     email: "",
+    streetAddress:"",
+    city:"",
+    state:"",
+    postalCode:"",
+    phoneNumber:"",
     password: "",
   });
+
   const RegisterMessage = () => toast.success("Successfully SignUp");
 
   const handleChange = (e) => {
@@ -163,6 +169,7 @@ function SignUp() {
       alert("unable to register user");
     }
   };
+
   return (
     <div>
       <Header/>
@@ -175,12 +182,13 @@ function SignUp() {
                     <form method="POST">
                         <h1>Create account</h1>
                         <div className="form_data">
-                            <label htmlFor="name">Username</label>
-                            <input type="text" name='username'
+                            <label htmlFor="name">Name</label>
+                            <input type="text" name='name'
                             onChange={handleChange}
-                            value={form.username}                             
+                            value={form.name}                             
                                 id="name" />
                         </div>
+
                         <div className="form_data">
                             <label htmlFor="email">Email</label>
                             <input type="email" name="email"
@@ -188,14 +196,47 @@ function SignUp() {
                                 value={form.email}
                                 id="email" />
                         </div>
+
                         <div className="form_data">
-                            <label htmlFor="mobile">Mobile number</label>
-                            <input type="number" 
-                            // name="mobile"
-                                // onChange={handleChange}
-                                // value={form.mobile}
-                                id="mobile" />
+                            <label htmlFor="StreetAddress">Street Address</label>
+                            <input type="text" name="streetAddress"
+                                onChange={handleChange}
+                                value={form.streetAddress}
+                                id="StreetAddress" />
                         </div>
+
+                        <div className="form_data">
+                            <label htmlFor="City">City</label>
+                            <input type="text" name="city"
+                                onChange={handleChange}
+                                value={form.city}
+                                id="City" />
+                        </div>
+
+                        <div className="form_data">
+                            <label htmlFor="State">State</label>
+                            <input type="text" name="state"
+                                onChange={handleChange}
+                                value={form.state}
+                                id="State" />
+                        </div>
+
+                        <div className="form_data">
+                            <label htmlFor="postalCode">Postal Code</label>
+                            <input type="text" name="postalCode"
+                                onChange={handleChange}
+                                value={form.postalCode}
+                                id="postalCode" />
+                        </div>
+
+                        <div className="form_data">
+                            <label htmlFor="phoneNumber">Phone Number</label>
+                            <input type="text" name="phoneNumber"
+                                onChange={handleChange}
+                                value={form.phoneNumber}
+                                id="PhoneNumber" />
+                        </div>
+
                         <div className="form_data">
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password"

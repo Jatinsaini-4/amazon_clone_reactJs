@@ -33,7 +33,7 @@ function Cart() {
 
   function deleteShoppingCart(id) {
     api
-      .delete(`https://localhost:7199/api/ShoppingCart/DeleteCart?id=${id}`)
+      .delete(`https://localhost:7199/api/ShoppingCart/DeleteCart?shoppingcartId=${id}`)
       .then((response) => {
         toast.success("Item remove from cart!", {
           position: "top-center",
@@ -68,7 +68,7 @@ function Cart() {
   const totalAmount = () => {
     let price = 0;
     cart.map((item) => {
-      price += item.product.price;
+      price += item.product.price * item.count;
     });
     setPrice(price);
   };
@@ -108,7 +108,6 @@ function Cart() {
                           key={item.id}
                           onChange={(e) =>{
                             plusShoppingCart(item.id,e.target.value)
-                            console.log("Selected value:", e.target.value,"%d",item.id)
                           }                            
                           }>
                           <option >{item.count}</option>

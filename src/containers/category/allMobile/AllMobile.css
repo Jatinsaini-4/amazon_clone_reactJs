@@ -13,6 +13,9 @@
     position: relative;
     top:-350px;
   }
+  @media (max-width: 768px) {
+    /* Apply styles for smaller screens */
+  }
   
   .product__rating {
     display: flex;  

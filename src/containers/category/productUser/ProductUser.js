@@ -7,6 +7,9 @@ import ROUTES from "../../../navigation/Router";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
+import 'primeicons/primeicons.css';
+        
+
 
 function ProductUser() {
   const [Products, setProducts] = useState([]);
@@ -26,9 +29,7 @@ function ProductUser() {
       <div className="row">
         {loading ? (
           <p className="loading">
-            <div class="spinner-border" role="status">
-  <span class="visually-hidden"></span>
-</div>
+            <i className="pi pi-spin pi-cog" style={{ fontSize: '2rem' }}></i>
           </p>
         ) : (
           Products.map((p, index) => (

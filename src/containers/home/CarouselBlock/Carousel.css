@@ -1,0 +1,20 @@
+/* 
+.carousel-control-next-icon{
+    height: 40px !important;
+    margin-right: 0px;
+    margin-top: -300px;
+    background-color: black;
+    z-index: 2;
+} */
+/* .carousel-control-prev-icon{
+    height: 40px !important;
+    z-index: 2;
+    margin-top: -300px;
+    background-color: rgba(60, 60, 60, 0.038);
+} */
+.carousel-control-next{
+    justify-content: end;
+}
+.carousel-control-prev{
+    justify-content: start;
+}
